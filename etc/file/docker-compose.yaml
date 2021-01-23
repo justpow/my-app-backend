@@ -1,0 +1,12 @@
+version : "3.2"
+
+services:
+  postgres:
+    image: postgres:10.12-alpine
+    container_name: db_app
+    env_file:
+      - ../../.env
+    volumes:
+      - ../../dev/database:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
